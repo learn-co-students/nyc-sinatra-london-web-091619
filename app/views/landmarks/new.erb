@@ -1,6 +1,17 @@
 <h2>Create New Landmark</h2>
 
 <!-- add content here -->
+<form action="/landmarks" method="post">
+<input type="text" name="landmark[name]" id="landmark_name">
+<input type="number" name="landmark[year_completed]" id="landmark_year_completed">
+<select name="landmark[figure_id]" id="figure_id">
+<%@figures.each do |figure| %>
+<option value=<%=figure.id%>><%=figure.name%></option>
+<%end%>
+</select>
+
+<input type="submit" value="Create New Landmark">
+</form>
 
 <a class="button" href="/landmarks">Landmarks</a>
 <a class="button" href="/">Home</a>
